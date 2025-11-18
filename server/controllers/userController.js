@@ -131,7 +131,7 @@ export const getUserById = async (req, res) => {
         // 4. Data ko pehle Redis mein save karein
         await redisClient.setEx(cacheKey, 3600, JSON.stringify(user));
         
-        // 5. User ko response bhej dein
+        // 5. User ko response bhej dein hai
         res.status(200).json(user);
 
     } catch (error) {
